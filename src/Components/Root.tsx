@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import NotesIcon from "../Media/Icons/NotesIcon";
 import AddIcon from "../Media/Icons/AddIcon";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Root = () => {

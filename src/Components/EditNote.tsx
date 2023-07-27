@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useNotes from "../Hooks/useNotes";
 import { NoteInterface } from "../Services/NotesProvider";
 import NoteForm from "./NoteForm";

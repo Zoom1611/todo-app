@@ -13,13 +13,13 @@ This is a simple notes app built using Vite. It allows users to create, edit, an
 
 1. **Clone the repository:**
 
-`git clone https://github.com/your-username/simple-notes-app.git`
+`git clone https://github.com/Zoom1611/todo-app.git`
 
 2. **Install Dependencies:**
 
 Navigate to the project folder and install the required dependencies using npm or yarn:
 
-`cd simple-notes-app`
+`cd todo-app`
 `npm install`
 
 or
@@ -34,7 +34,7 @@ or
 
 `yarn dev`
 
-The app should be accessible at `http://localhost:3000`.
+The app should be accessible at `http://localhost:5173/`.
 
 4. **Build for Production:**
 

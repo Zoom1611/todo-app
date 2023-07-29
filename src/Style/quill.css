@@ -1,0 +1,36 @@
+.quill .ql-toolbar.ql-snow {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+.quill .ql-container.ql-snow {
+  border: 1px solid #2b3238 !important;
+}
+.quill .ql-container.ql-snow:focus-within {
+  border: 1px solid #ffc440 !important;
+}
+
+.quill .ql-container.ql-snow .ql-editor::-webkit-scrollbar {
+  width: 5px;
+  height: 20px;
+  margin-right: 10px;
+}
+.quill .ql-container.ql-snow .ql-editor::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #f2f2f2;
+}
+.quill .ql-container.ql-snow .ql-editor::-webkit-scrollbar-thumb {
+  background: #ffc440;
+  border-radius: 100vh;
+}
+.quill .ql-container.ql-snow .ql-editor::-webkit-scrollbar-thumb:hover {
+  background: #d9d9d9;
+}
+
+.quill .ql-container.ql-snow .ql-tooltip {
+  top: 0px !important;
+  right: 30px !important;
+  left: auto !important;
+  margin-top: 0 !important;
+}

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+
+module.exports = {
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
       sans: ["DM Sans", "sans-serif"],
@@ -21,17 +22,33 @@ export default {
       xs: "0.625rem", // Extra small, 10px
     },
     extend: {
-      neutral: {
-        100: "#171717", // The darkest neutral color
-        200: "#3E3E3E",
-        300: "#4E4F54",
-        400: "#75777E",
-        500: "#90949F",
-        600: "#D9D9D9",
-        700: "#E9E9E9",
-        800: "#F3F3F3",
-        900: "#FCFCFC",
-        1000: "#FFFFFF", // The brightest neutral color
+      colors: {
+        primary: {
+          100: "#171C1F", // bg
+          200: "#1D2327", // header bg
+          300: "#2b3238", // border
+          400: "#353E43", // btn hover
+          500: "#FFFAF0", // btn text on hover
+        },
+        orange: {
+          100: "#FFC440",
+        },
+        green: {
+          100: "#42c773", // main
+          200: "#25C38A", // hover
+        },
+        neutral: {
+          100: "#171717", // The darkest neutral color
+          200: "#3E3E3E",
+          300: "#4E4F54",
+          400: "#75777E",
+          500: "#90949F",
+          600: "#D9D9D9",
+          700: "#E9E9E9",
+          800: "#F3F3F3",
+          900: "#FCFCFC",
+          1000: "#FFFFFF", // The brightest neutral color
+        },
       },
     },
     screens: {

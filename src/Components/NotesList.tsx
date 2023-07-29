@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../Style/scrollbar.css";
 import { DateTime } from "luxon";
 import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import { htmlToMarkdown } from "./TextAreaParser";
 
 const containerVariants = {
   hovered: {
@@ -17,14 +19,12 @@ const titleVariants = {
     fontSize: "24px",
   },
   hovered: {
-    fontSize: "38px",
+    fontSize: "42px",
   },
 };
 
 const NotesList = () => {
   const { notes, setNotes } = useNotes();
-
-  console.log({ notes });
 
   const onDeleteNoteClick = (noteId: string) => {
     const index = notes.findIndex((item) => item.id === noteId);
@@ -45,7 +45,7 @@ const NotesList = () => {
                 .map((note) => {
                   return (
                     <motion.div
-                      className="border border-[#2b3238] w-full h-full rounded-2xl px-10 py-4 mb-2.5 hover:bg-[#353E43] cursor-pointer flex justify-between items-center"
+                      className="border border-primary-300 w-full h-full rounded-2xl px-10 py-4 mb-2.5 hover:bg-primary-400 cursor-pointer flex justify-between items-center"
                       key={note.id}
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
@@ -54,39 +54,45 @@ const NotesList = () => {
                       whileHover="hovered"
                       exit={{ scale: 0, originZ: 0 }}
                     >
-                      <div className="group w-full overflow-hidden text-ellipsis">
-                        <motion.div
-                          className=" text-lg font-medium text-[#FFC440] mb-2.5"
-                          initial={{ fontSize: "28px" }}
-                          variants={titleVariants}
-                          style={{ margin: 0 }}
-                        >
-                          {note.title}
-                        </motion.div>
-                        <div className="text-md pr-10 mb-2.5 text-neutral-200 whitespace-nowrap overflow-hidden text-ellipsis">
-                          {note.description}
-                        </div>
-                        <div className="text-sm text-neutral-400">
-                          <span>
-                            Created:{" "}
-                            {DateTime.fromJSDate(note.date).toFormat(
-                              "dd.MM.yyyy"
-                            )}
-                          </span>
-                          {note.edited ? (
-                            <span className="ml-5">
-                              Edited:{" "}
-                              {DateTime.fromJSDate(note?.edited).toFormat(
+                      <Link to={`/preview/${note.id}`} className="w-full">
+                        <div className="group w-full overflow-hidden text-ellipsis">
+                          <motion.div
+                            className="overflow-hidden whitespace-nowrap text-ellipsis text-lg font-medium text-orange-100 mb-2.5"
+                            initial={{
+                              fontSize: "38px",
+                            }}
+                            animate={{ maxWidth: "1100px" }}
+                            variants={titleVariants}
+                          >
+                            {note.title}
+                          </motion.div>
+                          <div className="text-md pr-10 mb-2.5 text-neutral-800 overflow-hidden max-h-20">
+                            <ReactMarkdown>
+                              {htmlToMarkdown(note?.description ?? "")}
+                            </ReactMarkdown>
+                          </div>
+                          <div className="text-sm text-neutral-400">
+                            <span>
+                              Created:{" "}
+                              {DateTime.fromJSDate(note.date).toFormat(
                                 "dd.MM.yyyy"
                               )}
                             </span>
-                          ) : null}
+                            {note.edited ? (
+                              <span className="ml-5">
+                                Edited:{" "}
+                                {DateTime.fromJSDate(note?.edited).toFormat(
+                                  "dd.MM.yyyy"
+                                )}
+                              </span>
+                            ) : null}
+                          </div>
                         </div>
-                      </div>
+                      </Link>
                       <div className="flex gap-2">
                         <div className="group">
                           <Link to={`/edit/${note.id}`}>
-                            <button className="group-hover:[&>svg>path]:fill-[#FFC440] p-2 hover:bg-[#353E43]">
+                            <button className="group-hover:[&>svg>path]:fill-orange-100 p-2 hover:bg-primary-400">
                               <EditNoteIcon />
                             </button>
                           </Link>
@@ -118,7 +124,7 @@ const NotesList = () => {
             Never Forget a Thought, Capture Ideas with Ease!
           </motion.div>
           <motion.div
-            className="mt-10 text-lg text-[#FFC440]"
+            className="mt-10 text-lg text-orange-100"
             initial={{ x: "-100vw" }}
             animate={{ x: 0 }}
             transition={{

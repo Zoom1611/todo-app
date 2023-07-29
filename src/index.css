@@ -2,4 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-xlg;
+  }
+  h2 {
+    @apply text-lg;
+  }
+  h3 {
+    @apply text-h4;
+  }
+  p {
+    @apply text-base;
+  }
+  a {
+    @apply text-blue-600;
+  }
+  ul,
+  ol {
+    display: block;
+    list-style: disc outside none;
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  em {
+    font-style: italic;
+  }
+  strong {
+    font-weight: 700;
+  }
 
+  .ql-container.ql-snow .ql-editor h1 {
+    @apply text-xlg !important;
+  }
+
+  .ql-container.ql-snow .ql-editor h2 {
+    @apply text-lg !important;
+  }
+
+  .ql-container.ql-snow .ql-editor h3 {
+    @apply text-h4 !important;
+  }
+}

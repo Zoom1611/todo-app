@@ -54,3 +54,11 @@ The production-ready assets will be available in the `dist` folder.
 - React
 - TypeScript
 - LocalStorage (for data storage)
+
+## Application URL
+
+```
+https://todo-app-zoom.netlify.app/
+```
+
+#### Application creator: `Ivan Razum ivanrazum1611@gmail.com`

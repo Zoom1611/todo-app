@@ -22,7 +22,7 @@ Navigate to the project folder and install the required dependencies using npm o
 `cd simple-notes-app`
 `npm install`
 
-# or
+or
 
 `yarn install`
 
@@ -30,7 +30,7 @@ Navigate to the project folder and install the required dependencies using npm o
 
 `npm run dev`
 
-# or
+or
 
 `yarn dev`
 
@@ -42,7 +42,7 @@ To build the app for production, use the following command:
 
 `npm run build`
 
-# or
+or
 
 `yarn build`
 
